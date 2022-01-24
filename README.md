@@ -1,2 +1,2 @@
 # web-development-labs
-Web App Developments labs, learning how to use JavaScripts 
+Web App Development labs, learning how to use JavaScripts 
