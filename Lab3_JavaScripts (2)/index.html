@@ -1,15 +1,57 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>W3CSS JavaScrtipt Template Root</title>
+		<title>Some Information</title>
 		<link rel="stylesheet" href="css/w3.css">
 		<script type="text/javascript" src="jScripts/myScript.js"></script>
+		<style>
+			html { 
+				background-color: rgb(255, 255, 204);
+			}
+		</style>
 	</head>
-	<body>
-		<header class="w3-row w3-green w3-center">
-			<h1>Sample Root Folder With</h1>
-			<h1>W3CSS and JavaScript</h1>
-			<img  src="images/Hello-Foundling.jpg" class="w3-circle"/>
+
+	<!-- Calling onload on body will activate the prompts for user --> 
+	<body onload = "myScripts:UpdateData()">
+		<header class="w3-row w3-black w3-center">
+			<!-- Adding IDs so it can be referenced in script --> 
+			<h1 id = "theTitle">All about you</h1>
 		</header>
-	</body>
+
+		<main>
+			<div class = "w3-row w3-margin">
+				<div class = "w3-half w3-container">
+					<div class = "w3-card-4">							
+						<table class = "w3-table w3-bordered">
+							<tr>
+								<td>Name</td>
+								<td id = "theName">Name will appear here</td>
+							</tr>
+							<tr>
+								<td>Age</td>
+								<td id = "theAge">Age will appear here</td>
+							</tr>
+							<tr>
+								<td>Height</td>
+								<td id = "theHeight">Height will appear here</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class = "w3-half w3-container w3-center">
+					<img src = "images/jsLogo.png" style = "height: 125px;"/>
+				</div>
+			</div>
+		</main>
+	
+	<footer class = "w3-row w3-display-bottommiddle w3-black w3-center" style = "width: 100%">
+		<h1>Copyright &copy;
+			<!-- Creating script to update date each year --> 
+			<script>
+				var today = new Date();
+				document.writeln(today.getFullYear());
+				</script>
+		</h1>
+	</footer>
+</body>
 </html>
