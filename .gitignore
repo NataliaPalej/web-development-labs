@@ -2,7 +2,7 @@
 *.class
 
 # Powerpoint files
-*.ppt
+*.pptx
 
 # Log file
 *.log
