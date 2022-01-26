@@ -7,36 +7,45 @@
 				html{ background-color: rgb(255,255,204);}
 		</style>
 		<script>
-			function Factorial()
+			function Calc()
 			{
-                var result = 1;
-                var userEntry = parseInt(prompt("Enter a number between 1-20"));
-                console.log("The number entered is " + userEntry);
-				var HTMLout = "<h1 class = 'w3-black w3-center'>Factorials</h1><p>Value you entered: </p>" + userEntry + "</br></br>";
+				console.log("The numbers entered are: " + userEntry);
 
-                if(isNaN(userEntry) || userEntry < 1 || userEntry > 20)
-                document.getElementById("theBody").innerHTML = "<h1 class = 'w3-center w3-red'>Please enter a number between 1 and 20<p>Refresh to continue</p></h1>"
-                else
+				var HTMLout = "<h1 class = 'w3-black w3-center'>Sum and Average of many  numbers</h1><p>Values you entered: </p>";
+
+                var sum = 0.0;
+                var avg = 0.0;
+                var count = 0;
+                var userEntry = "";
+
+
+                while(userEntry != -1)
                 {
-                    for(var i = userEntry; i >=1; i--)
+                    userEntry = parseFloat(prompt("Enter another number"));
+
+                    while(isNaN(userEntry))
                     {
-                        result=1;
-                        console.log("Outer loop value is: " + i);
-                        //factorial n! = n*(n-1)
-                        for(var j = i; j >= 1; j--)
-                        {
-                            result*=j;
-                            console.log("Inner loop value is: " + j + ". Result var = " + result);
-                        }
-                        HTMLout += i + "! =" + result + "<br/>";
+                        userEntry = parseFloat(prompt("ERROR! Your entry is not a number. Try again"))
                     }
-                    document.getElementById("theBody").innerHTML = HTMLout;
-                    console.log(HTMLout);
+                    console.log("Values entered: " + userEntry);
+                    
+                    if(userEntry != -1)
+                    {
+                        HTMLout+=userEntry+ " ";
+                        count++;
+                        sum+=userEntry;
+                    }
                 }
-            }
-                
+                console.log("Valid entries: " + count);
+                avg = (sum/count).toFixed(2);
+
+                HTMLout+="<h3 class = 'w3-pink w3-center'>Count = "+ count +"<br/>Sum = " + sum + "<br/>Average = " + avg + "</h3>";
+                document.getElementById("theBody").innerHTML = HTMLout;
+                console.log(HTMLout)
+				}
+			
 		</script>
 	</head>
-	<body id = "theBody" onload = "Factorial()" class = "w3-center">
+	<body id = "theBody" onload = "Calc()" class = "w3-center">
 	</body>
 </html>
