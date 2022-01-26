@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>More Form Examples</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<style>
+				html{ background-color: rgb(255,255,204);}
+		</style>
+		<script>
+			function Calculation()
+			{
+				var userEntry1 = prompt("Enter 1st numbers:");
+				var userEntry2 = prompt("Enter 2nd numbers:");
+				var userEntry3 = prompt("Enter 3rd numbers:");
+				var userEntry4 = prompt("Enter 4th numbers:");
+				var userEntry5 = prompt("Enter 5th numbers:");
+				console.log("The numbers entered are " + userEntry1 + userEntry2 + userEntry3 + userEntry4 + userEntry5);
+				var HTMLout = "";
+
+				//checking if text entered is a number
+				if(isNaN(userEntry1 && userEntry2 && userEntry3 && userEntry4 && userEntry5) || (userEntry1 <= 0 && userEntry2 <= 0 && userEntry3 <= 0 && userEntry4 <= 0 && userEntry5 <= 0))
+				{
+				document.getElementById("theBody").innerHTML = "<h1 class = 'w3-red w3-center'> Error</h1>" + "<p class = 'w3-center'><b>!! Please enter numbers only !!</b></p>" + "<p><b>Your inputs </b>" + userEntry1 + userEntry2 + userEntry3 + userEntry4 + userEntry5 + "<b> are not all numbers!</b></p>";
+				}
+				else
+				{
+					var num1 = parseFloat(userEntry1);
+					var num2 = parseFloat(userEntry2);
+					var num3 = parseFloat(userEntry3);
+					var num4 = parseFloat(userEntry4);
+					var num5 = parseFloat(userEntry5);
+
+					HTMLout += "<h1 class = 'w3-black w3-center'>The numbers you entered are: </h1>" + num1 + " " + num2 + " " + num3 + " " + num4 + " " + num5;
+
+					HTMLout += "<h3 class = 'w3-pink w3-center'>The sum of your input</h3>";
+					var total = num1 + num2 + num3 + num4 + num5;
+					HTMLout += total;
+					document.getElementById("theBody").innerHTML = HTMLout;
+					console.log(HTMLout)
+
+					HTMLout += "<h3 class = 'w3-pink w3-center'>The average of your input</h3>";
+					var average = total/5;
+					HTMLout += average;
+					document.getElementById("theBody").innerHTML = HTMLout;
+					console.log(HTMLout)
+				}
+			}
+		</script>
+	</head>
+	<body id = "theBody" onload = "Calculation()" class = "w3-center">
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>More Form Examples</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<style>
+				html{ background-color: rgb(255,255,204);}
+		</style>
+		<script>
+			function LoadStars()
+			{
+				var userEntry = prompt("Enter positive number: ");
+				console.log("The value entered is " + userEntry);
+				var HTMLout = "";
+
+				//checking if text entered is a number
+				if(isNaN(userEntry) || userEntry <= 0)
+					document.getElementById("theBody").innerHTML = "<h1 class = 'w3-pink w3-center'> Error!</h1>" + "<p class = 'w3-center'><b>!! Please enter a number !!</b></p>" +  userEntry + "<b> is not a number!</b>";
+				else
+				{
+					var stars = parseInt(userEntry);
+					HTMLout += "<h1 class = 'w3-pink w3-center'>Here are your lovely stars!</h1><hr/>";
+					for(var i=1; i<=stars; i++)
+					{
+						if(i % 10 == 0)
+						HTMLout += "<br/>"
+						else
+						HTMLout += "*";
+					}
+					HTMLout += "<hr/><h2 class = 'w3-purple w3-center'> *** these are your stars ***</h2>"
+					document.getElementById("theBody").innerHTML = HTMLout;
+					console.log(HTMLout)
+				}
+			}
+		</script>
+	</head>
+	<body id = "theBody" onload="LoadStars()" class = "w3-center">
+	</body>
+</html>

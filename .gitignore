@@ -4,6 +4,9 @@
 # Powerpoint files
 *.pptx
 
+# Zip files
+*.zip
+
 # Log file
 *.log
 
