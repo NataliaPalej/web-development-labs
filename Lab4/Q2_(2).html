@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>More Form Examples</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<style>
+				html{ background-color: rgb(255,255,204);}
+		</style>
+		<script>
+			function Calculation()
+			{
+				console.log("The numbers entered are " + userEntry);
+
+				var HTMLout = "<h1 class = 'w3-black w3-center'>Sum and Average</h1><p>Values you entered: </p>";
+
+                var sum = 0.0;
+                var avg = 0.0;
+                var userEntry = " ";
+                //looping to prompt the user for 5 entries
+				for(var i = 1; i <= 5; i++)
+                {
+                //parse user input to float and prompt to enter a value
+                    userEntry = parseFloat(prompt("Enter a number"));
+                //while entry ISNT a number, prompt error and ask for valid number
+                    while(isNaN(userEntry))
+                    {
+                        userEntry = parseFloat(prompt("ERROR! Your entry is not a number. Try again"))
+                    }
+                //store user entry in HTMLout with, dividing by spaces
+                    HTMLout+=userEntry+ " ";
+                //add all numbers entered 
+                    sum+=userEntry;
+                }
+                //calculate average with 2 decimals
+                avg = (sum/5).toFixed(2)
+
+                //store results in HTMLout and display it in theBody
+                HTMLout+="<h3 class = 'w3-pink w3-center'>Sum = "+(sum).toFixed(2)+"<br/>Average = " + avg + "</h3>";
+                document.getElementById("theBody").innerHTML = HTMLout;
+                console.log(HTMLout)
+				}
+			
+		</script>
+	</head>
+	<body id = "theBody" onload = "Calculation()" class = "w3-center">
+	</body>
+</html>
