@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>More Form Examples</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<style>
+				html{ background-color: rgb(255,255,204);}
+
+                table, tr, td {
+                     text-align: center;
+                     width: 30%;
+                }
+
+		</style>
+		<script>
+			function Calc()
+			{
+				console.log("The numbers entered are: " + userEntry);
+
+				var HTMLout = "<h1 class = 'w3-black w3-center'>Sum and Average of many  numbers</h1><p>Values you entered: </p>";
+
+                var sum = 0.0;
+                var avg = 0.0;
+                var count = 0;
+                var userEntry = "";
+
+
+                while(userEntry != -1)
+                {
+                    userEntry = parseFloat(prompt("Enter another number"));
+
+                    while(isNaN(userEntry))
+                    {
+                        userEntry = parseFloat(prompt("ERROR! Your entry is not a number. Try again"))
+                    }
+                    console.log("Values entered: " + userEntry);
+                    
+                    if(userEntry != -1)
+                    {
+                        count++;
+                        HTMLout+="<center><table border = '2'><tr><td>" + count + "</td><td>" + userEntry.toFixed(2)+ "</tr></table></center>";
+                        sum+=userEntry;
+                    }
+                }
+                console.log("Valid entries: " + count);
+                avg = (sum/count).toFixed(2);
+
+                HTMLout+="<h3 class = 'w3-pink w3-center'>Count = "+ count + "</h3>";
+                HTMLout+="<h3 class = 'w3-black w3-center'>Sum = " + sum + "</h3>";
+                HTMLout+="<h3 class = 'w3-purple w3-center'>Average = " + avg + "</h3>";
+                document.getElementById("theBody").innerHTML = HTMLout;
+                console.log(HTMLout)
+				}
+			
+		</script>
+	</head>
+	<body id = "theBody" onload = "Calc()" class = "w3-center">
+
+	</body>
+</html>
