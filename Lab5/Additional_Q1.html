@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Additional Q1</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+        html {
+            background-color: rgb(255, 255, 204);
+        }
+
+      th{
+          text-align: left;
+      }
+
+      td{
+          text-align: center;
+      }
+    </style>
+    <script>
+        function Info() {
+            var name = prompt("Enter your name: ");
+            var age = prompt("Enter your age: ");
+            var address1 = prompt("Enter your address (1): ");
+            var address2 = prompt("Enter your address (2): ");
+            var country = prompt("Enter your country: ");
+            console.log("Name: " + name)
+            console.log("Age: " + age)
+            console.log("Address1: " + address1)
+            console.log("Address2: " + address2)
+            console.log("Country: " + country)
+
+            document.getElementById('theTitle').innerHTML = name;
+            document.getElementById('theName').innerHTML = name;
+            document.getElementById('theAge').innerHTML = age;
+            document.getElementById('theAddress1').innerHTML = address1;
+            document.getElementById('theAddress2').innerHTML = address2;
+            document.getElementById('theCountry').innerHTML = country;
+
+
+           // Everything below will replace current body
+            var HTMLout = "";
+            HTMLout+="<h1 class = 'w3-black w3-center'>Information about: " + name + "</h1>"
+            HTMLout+="<center><table border = '1' class = 'w3-white w3-table w3-striped w3-bordered w3-center' style = 'width: 50%'><tr><th>Name:" + "</th><td>" + name+  "</tr>";
+            HTMLout+="<tr><th>Age:" + "</th><td>" + age+  "</tr>";
+            HTMLout+="<tr><th>Address1:" + "</th><td>" + address1+  "</tr>";
+            HTMLout+="<tr><th>Address2:" + "</th><td>" + address2+  "</tr>";
+            HTMLout+="<tr><th>Country:" + "</th><td>" + country+  "</tr></table></center>";            
+            
+
+            HTMLout += "</br><input type = 'text' id = 'colorInputText'>";
+            HTMLout += "<input type = 'button' id = 'colorButton' value='click to change color'>";
+            
+
+            HTMLout += "</br></br><div class = 'w3-black w3-center'><a href = 'https://www.dccomics.com/' target = '_blank'>DC Website</a></div>"
+
+            document.getElementById("theBody").innerHTML = HTMLout;
+        }
+    </script>
+</head>
+
+<body id = "theBody" onload="Info()">
+<!-- What below displays prior users entry -->
+
+
+    <header class='w3-row w3-black w3-center'>
+        <h1>Information about</h1>
+        <h2 id = "theTitle"></h2>
+    </header>
+
+    <div class = 'w3-center w3-striped'>
+    <table border = '1' >
+        <tr>
+            <th>Name</th>
+            <td id="theName">Your name will appear here</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td id="theAge">Your age will appear here</td>
+        </tr>
+        <tr>
+            <th>Address 1</th>
+            <td id="theAddress1">Address 1 will appear here</td>
+        </tr>
+        <tr>
+            <th>Address 2</th>
+            <td id="theAddress2">Address 2 will appear here</td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td id="theCountry">Your country will appear here</td>
+        </tr>
+    </center>
+    </table>
+</div>
+    <div class = 'w3-black w3-center'>
+        <a href = "https://www.dccomics.com/" target = "_blank">DC Website</a>    
+    </div>
+
+    <script>
+        function changeColor()
+        {
+            let coloor = document.getElementById("colorInputText").value;
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+
+</html>

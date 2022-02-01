@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>More Form Examples</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+        html {
+            background-color: rgb(255, 255, 204);
+        }
+    </style>
+
+    <script>
+        function StartEnd() {
+            var odd = " ";              //assigning nothing to odd/even, if "0" is assigned, it will always print it at the start
+            var oddCount = 0;
+            var even = " ";
+            var evenCount = 0;
+
+            var sumEven = 0.0;
+            var avgEven = 0.0;
+            var sumOdd = 0.0;
+            var avgOdd = 0.0;
+
+            var start = " ";        //first number
+            var end = " ";          //last number
+            var reverse = 0;     //temporary variable if end is smaller than start
+
+            start = parseInt(prompt("Enter a start number"));
+            console.log("The start num is " + start);
+
+            end = parseInt(prompt("Enter an end number"));
+            console.log("The end num is " + end);
+
+            var HTMLout = "<h1 class = 'w3-black'>Number Evaluator </h1>";
+
+            if (isNaN(start || end))        //if value isnt a number, prints error
+            {
+                document.getElementById("theBody").innerHTML = "<h1 class = 'w3-red'>Please enter a valid number<p>Refresh to continue</p></h1>"
+            }
+            else {
+                if (end < start) {               //if end if smaller than start
+                    reverse = start;
+                    start = end;                  //store START in END
+                    end = reverse;              //store END in temp var REVERSE
+                }
+
+                for (var i = start; i <= end; i++) {
+                    if (i % 2 == 0)              //checka if value is even
+                    {
+                        evenCount++;            //counts amount of even values
+                        even += " " + i;          //stores all values followed by space
+                        sumEven += i;           //sums all even values together
+                    }
+                    else {
+                        oddCount++;
+                        odd += " " + i;
+                        sumOdd += i;
+                    }
+                }
+                avgEven = (sumEven / evenCount).toFixed(2);       //include average outside loop so its calculated only once
+                avgOdd = (sumOdd / oddCount).toFixed(2);
+
+                HTMLout += "<div class='w3-row'><div class='w3-half w3-container w3-pink'><h1> Start Position: <b>" + start + "</b></h1></div><div class='w3-half w3-container w3-purple'><h1> End Position:<b> " + end + "</b></h1></div></div>";
+
+                HTMLout += "<h3 class = 'w3-left-align'> Even numbers between range: <b>" + start + "</b> -> <b>" + end + "</b></br>Even numbers count: <b>" + evenCount + "</b><p>Values Include:</br>" + even + "</p></h3>";
+                console.log("Evens: " + even)
+
+                HTMLout += "<p class = 'w3-left-align w3-pink'> Sum = " + sumEven + "</br>Average = " + avgEven + "</p>";
+                console.log("\tSum even: " + sumEven)
+                console.log("\tAverage even: " + avgEven)
+
+                HTMLout += "</br><h3 class = 'w3-left-align'> Odd numbers between range: <b>" + start + "</b> -> <b> " + end + "</b></br>Odd numbers count: <b>" + oddCount + "</b><p>Values Include: </br>" + odd + "</p></h3>";
+                console.log("Odd: " + odd)
+
+                HTMLout += "<p class = 'w3-left-align w3-pink'> Sum = " + sumOdd + "</br>Average = " + avgOdd + "</p>";
+                console.log("\tSum odd: " + sumOdd)
+                console.log("\tAverage odd: " + avgOdd)
+
+                HTMLout += "<h2 class = 'w3-black'><b>Refresh the page to try again</b></h2>"
+
+                document.getElementById("theBody").innerHTML = HTMLout;
+            }
+
+        }
+    </script>
+
+</head>
+
+<body id="theBody" onload="StartEnd()" class="w3-center">
+
+</body>
+
+</html>

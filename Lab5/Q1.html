@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>More Form Examples</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	<style>
+		html {
+			background-color: rgb(255, 255, 204);
+		}
+	</style>
+
+	<script>
+		function StartEnd() {
+			var odd = 0;
+			var oddCount = 0;
+			var even = 0;
+			var evenCount = 0;
+
+			var sum = 0.0;
+			var avg = 0.0;
+
+			var start = " ";
+			var end = " ";
+
+			start =
+				parseInt(prompt("Enter a start number"));
+			console.log("The start num is " + start);
+
+			end =
+				parseInt(prompt("Enter an end number"));
+			console.log("The end num is " + end);
+
+			var HTMLout = "<h1 class = 'w3-black'>Number Evaluator </h1>";
+
+			if (isNaN(start || end)) {
+				document.getElementById("theBody").innerHTML = "<h1 class = 'w3-red'>Please enter a valid number<p>Refresh to continue</p></h1>"
+			}
+			else {
+				for (var i = start; i <= end; i++) {
+					if (i % 2 == 0) {
+						evenCount++;
+						even += " " + i;
+					}
+					else {
+						oddCount++;
+						odd += " " + i;
+					}
+				}
+
+				HTMLout += "<div class='w3-row'><div class='w3-half w3-container w3-pink'><h1> Start Position: <b>" + start + "</b></h1></div><div class='w3-half w3-container w3-purple'><h1> End Position:<b> " + end + "</b></h1></div></div>";
+
+				HTMLout += "<h3 class = 'w3-left-align'> Even numbers between range: <b>" + start + "</b> - <b>" + end + "</b></br>Even numbers count: <b>" + evenCount + "</b><p>Values Include:</br>" + even + "</p></h3></br>";
+				console.log("Evens: " + even)
+
+				HTMLout += "<h3 class = 'w3-left-align'> Odd numbers between range: <b>" + start + "</b> -<b> " + end + "</b></br>Odd numbers count: <b>" + oddCount + "</b><p>Values Include: </br>" + odd + "</p></h3>";
+				console.log("Odd: " + odd)
+
+				HTMLout += "<h2 class = 'w3-black'><b>Refresh the page to try again</b></h2>"
+
+				document.getElementById("theBody").innerHTML = HTMLout;
+			}
+		}
+	</script>
+</head>
+
+<body id="theBody" onload="StartEnd()" class="w3-center">
+
+</body>
+
+</html>
