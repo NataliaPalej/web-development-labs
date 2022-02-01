@@ -4,6 +4,9 @@
 # Powerpoint files
 *.pptx
 
+#pdf
+*.pdf
+
 # Zip files
 *.zip
 
