@@ -1,24 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="en">
-
-<head>
-    <title>Additional Q1</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <style>
-        html {
-            background-color: rgb(255, 255, 204);
-        }
-
-      th{
-          text-align: left;
-      }
-
-      td{
-          text-align: center;
-      }
-
-    </style>
-    <script>
+ <script>
         function Info() {
             var name = prompt("Enter your name: ");
             var age = prompt("Enter your age: ");
@@ -48,55 +28,11 @@
             HTMLout+="<tr><th>Address2:" + "</th><td>" + address2+  "</tr>";
             HTMLout+="<tr><th>Country:" + "</th><td>" + country+  "</tr></table></center>";            
             
+            HTMLout += "</br><input type = 'text' id = 'colorInputText'>";
+            HTMLout += "<input type = 'button' id = 'colorButton' value='click to change color'>";
+            
             HTMLout += "</br></br><div class = 'w3-black w3-center'><a href = 'https://www.dccomics.com/' target = '_blank'>DC Website</a></div>"
 
             document.getElementById("theBody").innerHTML = HTMLout;
         }
     </script>
-</head>
-
-<body id = "theBody" onload="Info()">
-<!-- What below displays prior users entry -->
-
-
-    <header class='w3-row w3-black w3-center'>
-        <h1>Information about</h1>
-        <h2 id = "theTitle"></h2>
-    </header>
-
-    <main>
-    <center>
-    <table border = '1' class = 'w3-table-all w3-center w3-white' style = 'width: 70%;'>
-        <tr>
-            <th>Name</th>
-            <td id="theName">Your name will appear here</td>
-        </tr>
-        <tr>
-            <th>Age</th>
-            <td id="theAge">Your age will appear here</td>
-        </tr>
-        <tr>
-            <th>Address 1</th>
-            <td id="theAddress1">Address 1 will appear here</td>
-        </tr>
-        <tr>
-            <th>Address 2</th>
-            <td id="theAddress2">Address 2 will appear here</td>
-        </tr>
-        <tr>
-            <th>Country</th>
-            <td id="theCountry">Your country will appear here</td>
-        </tr>
-    </table>
-</center>
-
-</main>
-
-<footer>
-</div>
-    <div class = 'w3-black w3-center'>
-        <a href = "https://www.dccomics.com/" target = "_blank">DC Website</a>    
-</footer>
-</body>
-
-</html>

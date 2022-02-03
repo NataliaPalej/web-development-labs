@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Additional Q2</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+        html {
+            background-color: rgb(255, 255, 204);
+        }
+
+        th {
+            text-align: left;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function Info() {
+            var name = prompt("Enter your name: ");
+            var age = prompt("Enter your age: ");
+            var address1 = prompt("Enter your address (1): ");
+            var address2 = prompt("Enter your address (2): ");
+            var country = prompt("Enter your country: ");
+            console.log("Name: " + name)
+            console.log("Age: " + age)
+            console.log("Address1: " + address1)
+            console.log("Address2: " + address2)
+            console.log("Country: " + country)
+
+            document.getElementById('theTitle').innerHTML = name;
+            document.getElementById('theName').innerHTML = name;
+            document.getElementById('theAge').innerHTML = age;
+            document.getElementById('theAddress1').innerHTML = address1;
+            document.getElementById('theAddress2').innerHTML = address2;
+            document.getElementById('theCountry').innerHTML = country;
+        }
+    </script>
+</head>
+
+<body id="theBody" onload="Info()">
+    <header class='w3-row w3-black w3-center'>
+        <h1>Hello</h1>
+        <h2 id="theTitle"></h2>
+    </header>
+
+    <main>
+        <center>
+            <table border='1' class='w3-table-all w3-center w3-white w3-margin' style='width: 70%;'>
+                <tr>
+                    <th>Name</th>
+                    <td id="theName">Your name will appear here</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td id="theAge">Your age will appear here</td>
+                </tr>
+                <tr>
+                    <th>Address 1</th>
+                    <td id="theAddress1">Address 1 will appear here</td>
+                </tr>
+                <tr>
+                    <th>Address 2</th>
+                    <td id="theAddress2">Address 2 will appear here</td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td id="theCountry">Your country will appear here</td>
+                </tr>
+            </table>
+        </center>
+
+        <!-- Change to specific background color buttons -->
+        </br><input type='button' onclick='red()' value='Red'>
+        <input type='button' onclick='blue()' value='Blue'>
+        <input type='button' onclick='green()' value='Green'>
+        <input type='button' onclick='pink()' value='Pink'>
+        <input type='button' onclick='purple()' value='Purple'></br></br>
+        <input type = 'button' onclick = 'random()' value='Random'>
+
+    </main>
+
+    <footer>
+        </div>
+        <div class='w3-black w3-center w3-margin-top'>
+            <a href="https://www.dccomics.com/" target="_blank">DC Website</a>
+    </footer>
+
+    <script>
+        function red() {
+            document.body.style.backgroundColor = "red";
+        }
+
+        function blue() {
+            document.body.style.backgroundColor = "blue";
+        }
+
+        function green() {
+            document.body.style.backgroundColor = "green";
+        }
+
+        function pink() {
+            document.body.style.backgroundColor = "pink";
+        }
+
+        function purple() {
+            document.body.style.backgroundColor = "purple";
+        }
+
+        function random() {
+            const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+            const r = randomBetween(0, 255);
+            const g = randomBetween(0, 255);
+            const b = randomBetween(0, 255);
+            const rgb = `rgb(${r},${g},${b})`; 
+
+            document.body.style.backgroundColor = rgb;
+            console.log("RGB" + rgb)
+        }
+
+     </script>
+
+</body>
+
+</html>
