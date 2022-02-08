@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Q1 Times Tables</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	<style>
+		html {
+			background-color: rgb(255, 255, 204);
+		}
+
+		p {
+			text-align: center;
+		}
+
+		li {
+			text-align: left;
+		}
+	</style>
+	<script>
+		function Q1() {
+			var HTMLout = 0;
+			var entry = 0;
+			var result = 0;
+
+			entry = parseInt(prompt("Enter an integer number: "));
+			console.log("Entered value: " + entry);
+
+			//if value isnt a number, is smaller than 1 or bigger than 20, prints error
+			if (isNaN(entry) || entry < 1 || entry > 20) {
+				HTMLout += "<h1 class = 'w3-red w3-center'>Numerical ERROR</h1></br>"
+				HTMLout += "<p>The reasons that you are seeing this page is because one of the following reasons:</p>"
+				HTMLout += "<ol class = 'w3-center'><li>The value you enteres was not a valid number</li><li>The number entered was less than 1</li><li>The number was bigger than 20</li></ol></br>"
+				HTMLout += "<h1 class = 'w3-red w3-center'> Refresh the page and try again.</h1>"
+				document.getElementById("theBody").innerHTML = HTMLout;
+			}
+			// Everything below will replace current body
+			else {
+				for (var i = 1; i < entry; i++)
+				{
+					
+				}
+
+					var HTMLout = ""
+					HTMLout = "<h1 class = 'w3-black w3-center'>Multiplication </h1>";
+					HTMLout += "<center><table border = '1' class = 'w3-white w3-table w3-bordered w3-center' style = 'width: 70%'><tr><td>Input</td><td>Result</td>"
+					HTMLout += "<tr><td>" + i + "</td><td>" + j + "</td></tr></table>"
+					document.getElementById("theBody").innerHTML = HTMLout;
+				}
+			}
+		}
+
+	</script>
+</head>
+
+<body id="theBody" onload="Q1()" class="w3-center">
+</body>
+
+</html>
