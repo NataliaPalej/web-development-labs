@@ -16,6 +16,7 @@
 		li {
 			text-align: left;
 		}
+
 	</style>
 	<script>
 		function Q1() {
@@ -36,20 +37,21 @@
 			}
 			// Everything below will replace current body
 			else {
-				for (var i = 1; i < entry; i++)
-				{
-					
-				}
+				var HTMLout = ""
+				HTMLout = "<h1 class = 'w3-black w3-padding w3-margin'>Multiplication </h1>"
+				HTMLout += "<center><table border = '1' class = 'w3-white w3-table w3-bordered w3-center' style = 'width: 50%'><tr><td class = 'w3-center w3-pink'>Input</td><td class = 'w3-black' style = 'width: 3%'></td><td class = 'w3-center w3-black'>Result</td></tr>"
 
-					var HTMLout = ""
-					HTMLout = "<h1 class = 'w3-black w3-center'>Multiplication </h1>";
-					HTMLout += "<center><table border = '1' class = 'w3-white w3-table w3-bordered w3-center' style = 'width: 70%'><tr><td>Input</td><td>Result</td>"
-					HTMLout += "<tr><td>" + i + "</td><td>" + j + "</td></tr></table>"
-					document.getElementById("theBody").innerHTML = HTMLout;
+				for (var i = 1; i <= entry; i++) {
+					result = entry * i;
+					HTMLout += "<tr><td class = 'w3-center'>" + i + " x " + entry + "</td><td class = 'w3-center' style = 'width: 3%'>=</td><td class = 'w3-center'>" + result + "</td></tr>"
+					console.log("\tResult: " + result)
 				}
+				HTMLout += "</table>"
+				HTMLout += "<h1 class = 'w3-black w3-padding w3-margin'>Refresh to try again or hit F5 on keyboard</h1>"
+				
+				document.getElementById("theBody").innerHTML = HTMLout;
 			}
 		}
-
 	</script>
 </head>
 
