@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Q2 </title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	<style>
+		html {
+			background-color: rgb(255, 255, 204);
+		}
+
+		h1{
+			text-align: center;
+		}
+
+		h3{
+			text-align: center;
+			color: red;
+		}
+
+	</style>
+	<script>
+		function $(id)
+		{
+			return document.getElementById(id);
+		}
+
+		function Q2() 
+		{
+			var num1 = 0;		//from number
+			var num2 = 0		//to number
+			var random = 0;  
+            var reverse = 0;   //temporary variable if from is smaller than to
+
+			num1 = prompt("Enter an integer number: ");
+			num2 =prompt("Enter an integer number: ");
+			console.log("First number: " + num1);
+			console.log("Second number: " + num2);
+
+			//if value isnt a number, prints error
+			if (isNaN(num1) || isNaN(num2)) 
+			{
+				var HTMLout = " ";
+				HTMLout += "<h1 class = 'w3-red w3-center'>Numerical ERROR</h1></br>"
+				HTMLout += "<p>The reasons that you are seeing this page is because one of the following reasons:</p></br>"
+				HTMLout += "<h3 class = 'w3-red w3-center'>Data Entered</h3></br>"
+				HTMLout += "<p>The data you entered:</p>"
+				HTMLout += "<ul><li>" + num1 + "</li></ul><ul><li>" + num2 + "</li></ul>"
+				HTMLout +="<h1 class = 'w3-red w3-padding'>Refresh to try again or hit F5 on keyboard</h1>"
+				$("theBody").innerHTML = HTMLout;
+			}
+		
+			else {
+				//print the header and start of my table
+				var HTMLout = ""
+				HTMLout = "<h1 class = 'w3-black w3-padding'>Random Number Generator </h1></br>"
+				HTMLout += "<p>Here is some information on the data you entered: </p>"
+				
+				if (num2 < num1) 
+				{ 
+                    reverse = num1;
+                    num1 = num2;          
+                    num2 = reverse;      
+                }
+
+				HTMLout += "<ul><li>Minimum value: " + num1 + "</li></ul>";
+				HTMLout += "<ul><li>Maximum value: " + num2 + "</li></ul>";
+				HTMLout += "<h3 calss = 'w3-red w3-text-red'> <b>Generating 10 random numbers between these values</b></h3>"
+				for (var i = 0; i < 10; i++) 
+				{			
+					random = parseFloat(Math.random() * (num2-num1) + num1);
+					console.log("random number: " + random)
+					HTMLout += "<ul><li>" + random.toFixed(3) + "</li></ul>";
+				}
+				
+				//Add footer
+				HTMLout += "<h1 class = 'w3-black w3-padding'>Refresh to try again or hit F5 on keyboard</h1>"
+				
+				$("theBody").innerHTML = HTMLout;
+			}
+		}
+	</script>
+</head>
+
+<body id="theBody" onload="Q2()">
+</body>
+
+</html>

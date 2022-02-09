@@ -37,15 +37,18 @@
 			}
 			// Everything below will replace current body
 			else {
+				//print the header and start of my table
 				var HTMLout = ""
 				HTMLout = "<h1 class = 'w3-black w3-padding w3-margin'>Multiplication </h1>"
 				HTMLout += "<center><table border = '1' class = 'w3-white w3-table w3-bordered w3-center' style = 'width: 50%'><tr><td class = 'w3-center w3-pink'>Input</td><td class = 'w3-black' style = 'width: 3%'></td><td class = 'w3-center w3-black'>Result</td></tr>"
 
 				for (var i = 1; i <= entry; i++) {
 					result = entry * i;
+					//for each result print it
 					HTMLout += "<tr><td class = 'w3-center'>" + i + " x " + entry + "</td><td class = 'w3-center' style = 'width: 3%'>=</td><td class = 'w3-center'>" + result + "</td></tr>"
 					console.log("\tResult: " + result)
 				}
+				//close the table and add footer
 				HTMLout += "</table>"
 				HTMLout += "<h1 class = 'w3-black w3-padding w3-margin'>Refresh to try again or hit F5 on keyboard</h1>"
 				
