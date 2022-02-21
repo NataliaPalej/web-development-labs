@@ -29,9 +29,7 @@
 		{
 			var num1 = 0;		//from number
 			var num2 = 0		//to number
-			var random = 0;  
-            var reverse = 0;   //temporary variable if from is smaller than to
-
+			 
 			num1 = prompt("Enter an integer number: ");
 			num2 =prompt("Enter an integer number: ");
 			console.log("First number: " + num1);
@@ -52,30 +50,34 @@
 		
 			else {
 				//print the header and start of my table
-				var HTMLout = ""
+				var HTMLout = " "
 				HTMLout = "<h1 class = 'w3-black w3-padding'>Random Number Generator </h1></br>"
 				HTMLout += "<p>Here is some information on the data you entered: </p>"
 				
+				num1 = parseFloat(num1);
+				num2 = parseFloat(num2);
+				var reverse = 0;   //temporary variable if from is smaller than to
 				if (num2 < num1) 
 				{ 
                     reverse = num1;
                     num1 = num2;          
                     num2 = reverse;      
                 }
-
+				
 				HTMLout += "<ul><li>Minimum value: " + num1 + "</li></ul>";
 				HTMLout += "<ul><li>Maximum value: " + num2 + "</li></ul>";
 				HTMLout += "<h3 calss = 'w3-red w3-text-red'> <b>Generating 10 random numbers between these values</b></h3>"
+			
+				var random = 0.0; 
 				for (var i = 0; i < 10; i++) 
 				{			
-					random = parseFloat(Math.random() * (num2-num1) + num1);
+					random = (Math.random() *  (num2-num1) + num1);
 					console.log("random number: " + random)
 					HTMLout += "<ul><li>" + random.toFixed(3) + "</li></ul>";
 				}
 				
 				//Add footer
 				HTMLout += "<h1 class = 'w3-black w3-padding'>Refresh to try again or hit F5 on keyboard</h1>"
-				
 				$("theBody").innerHTML = HTMLout;
 			}
 		}
