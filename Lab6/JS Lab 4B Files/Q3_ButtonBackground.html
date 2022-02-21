@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <title>Button Background</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <style>
+            html {background-color: rgb(255, 255, 204);}
+        </style>
+        <script>
+            function $(id){
+                return document.getElementById(id);
+            }
+
+            function changeBackground()
+            {
+                //creating vars for user input
+                // [$function] call ID name, .value to get the value from it
+                var red = parseInt($("red").value);    
+                var green = parseInt($("green").value);
+                var blue = parseInt($("blue").value);
+                console.log("Red:" + red + "\n Green: " + green + "\nBlue: " + blue);
+
+                //check if input is not a number
+                if(isNaN(red) || isNaN(blue) || isNaN(green))
+                {
+                    alert("No text allowed. Only numerical values allowed between range 0-255");
+                    console.log("TEXT ERROR ALERT (2)");
+                }
+
+                //check if input is within the range
+                else if(red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255)
+                {
+                    alert("Value must be between range 0 and 255")
+                    console.log("ERROR ALERT");
+                }
+                else
+                {   //changing the background area
+                    $("theArea").style.backgroundColor = 'rgb(' + red +',' + green + ',' + blue +')';
+                }
+            }
+
+            window.onload = function(){
+                $("changeBackground").onclick = function (){
+                    changeBackground();}
+            }
+            
+        </script>
+    </head>
+    <body class="w3-margin">
+        <h1 class="w3-center w3-teal">CSS JavaScrtipt Background Changer</h1>
+        <div class="w3-row">
+            <div class="w3-half w3-container ">
+                <table class="w3-table" style="width:50%">
+                    <tr>
+                        <td>Red</td>
+                        <td><input type="text" id="red" /></td>
+                    </tr>
+                    <tr>
+                        <td>Green</td>
+                        <td><input type="text" id="green" /></td>
+                    </tr>
+                    <tr>
+                        <td>Blue</td>
+                        <td><input type="text" id="blue" /></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="text-align: center;">
+                            <button class="w3-button w3-block w3-teal"id="changeBackground">Change</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="w3-half w3-container w3-padding-right" id="theArea" style="height:175px; ">
+            </div>
+        </div>
+    </body>
+</html>
