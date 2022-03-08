@@ -7,6 +7,8 @@
 #pdf
 *.pdf
 
+bmi-calculator/
+
 # Zip files
 *.zip
 
